@@ -193,8 +193,8 @@ define(["postmonger"], function (Postmonger) {
       {
         message: value,
         emailAddress: "{{InteractionDefaults.Email}}",
-        name: "{{Contact.Attribute.testia.nombre}}",
-        phoneNumber: "{{Contact.Attribute.testia.PhoneNumber}}",
+        name: '{{Contact.Attribute."testia"."nombre"}}',
+        phoneNumber: '{{Contact.Attribute."testia"."PhoneNumber"}}',
       },
     ];
 
