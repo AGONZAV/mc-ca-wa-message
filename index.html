@@ -54,31 +54,48 @@
     </style>
   </head>
   <body>
-    <div id="step1" class="step">
-      Seleccione su plantilla de whastsapp:
-      <select id="select1">
-        <option value="">Opciones</option>
-        <option value="Plantilla1">Plantilla 1</option>
-        <option value="Plantilla2">Plantilla 2</option>
-        <option value="contactabilidad">contactabilidad</option>
-        <option value="Plantilla3">Plantilla 3</option>
-      </select>
+    <div class="container-fluid">
+      <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand">
+            <img
+              src="https://www.proteccion.com/wps/contenthandler/dav/fs-type1/themes/TemaProteccion/images/universidad/logo_proteccion.svg"
+              alt=""
+              width="300"
+              height="60"
+              class="d-inline-block align-text-top"
+            />
+            whastsapp custom Activity
+          </a>
+        </div>
+      </nav>
+      <div id="step1" class="step">
+        Seleccione su plantilla de whastsapp:
+        <select class="form-select" id="select1">
+          <option value="">Opciones</option>
+          <option value="Plantilla1">Plantilla 1</option>
+          <option value="Plantilla2">Plantilla 2</option>
+          <option value="contactabilidad">contactabilidad</option>
+          <option value="Plantilla3">Plantilla 3</option>
+        </select>
 
-      <button id="toggleLastStep" type="button" class="btn btn-success">
-        Ultimo paso opcional
-      </button>
+        <button id="toggleLastStep" type="button" class="btn btn-primary">
+          Ultimo paso opcional
+        </button>
+      </div>
+      <div id="step2" class="step">
+        Segunda Página con información de la plantilla
+      </div>
+      <div id="step3" class="step">
+        Escogiste la plantilla de whastsapp:
+        <div id="message"></div>
+      </div>
+      <div id="step4" class="step">
+        Hey, here's a fourth step, just for you. Toggle this on or off from step
+        1.
+      </div>
     </div>
-    <div id="step2" class="step">
-      Segunda Página con información de la plantilla
-    </div>
-    <div id="step3" class="step">
-      Escogiste la plantilla de whastsapp:
-      <div id="message"></div>
-    </div>
-    <div id="step4" class="step">
-      Hey, here's a fourth step, just for you. Toggle this on or off from step
-      1.
-    </div>
+
     <script
       src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
