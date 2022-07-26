@@ -1,7 +1,7 @@
 {
   "workflowApiVersion": "1.1",
   "metaData": {
-    "icon": "https://jb-chat-messaging.s10.marketingcloudapps.com/whatsapp/images/icon.svg",
+    "icon": "images/icono_WhatsApp_150x150.svg",
     "category": "message"
   },
   "type": "REST",
