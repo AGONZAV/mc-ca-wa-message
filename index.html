@@ -49,23 +49,38 @@
       }
     </style>
   </head>
-  <body>
-    <div class="container-fluid">
-      <nav class="navbar navbar-light bg-light">
-        <div class="container-fluid">
-          <a class="navbar-brand">
-            <img
-              src="https://www.proteccion.com/wps/contenthandler/dav/fs-type1/themes/TemaProteccion/images/universidad/logo_proteccion.svg"
-              alt=""
-              width="300"
-              height="60"
-              class="d-inline-block align-text-top"
-            />
-            whastsapp custom Activity
-          </a>
+  <body class="bg-secondary">
+    <div class="container bg-secondary">
+      <nav class="navbar navbar-light bg-secondary">
+        <div class="container-fluid bg-secondary">
+          <div class="row">
+            <div class="col-5">
+              <a class="navbar-brand">
+                <img
+                  src="./images/logo_proteccion.svg"
+                  alt=""
+                  width="300"
+                  height="60"
+                  class="d-inline-block align-text-top"
+                />
+              </a>
+            </div>
+
+            <div class="col-1">
+              <img
+                src="./images/icono_WhatsApp_150x150.svg"
+                alt=""
+                width="60"
+                height="60"
+              />
+            </div>
+            <div class="col-5">
+              <h3 class="text-white">WhastsApp custom Activity</h3>
+            </div>
+          </div>
         </div>
       </nav>
-      <div id="step1" class="step">
+      <div id="step1" class="step text-white">
         Seleccione su plantilla de whastsapp:
         <select id="select1" name="locality" class="form-select"></select>
         <!-- <select class="form-select" id="select1">
