@@ -33,19 +33,23 @@
   "configurationArguments": {
     "save": {
       "url": "https://obscure-anchorage-66318.herokuapp.com/save",
-      "header": "Ocp-Apim-Subscription-Key:12312313213"
+      "useJwt": true,
+      "customerKey": "your-encryption-customer-key-here"
     },
     "publish": {
       "url": "https://obscure-anchorage-66318.herokuapp.com/publish",
-      "header": "Ocp-Apim-Subscription-Key:12312313213"
+      "useJwt": true,
+      "customerKey": "your-encryption-customer-key-here"
     },
     "validate": {
       "url": "https://obscure-anchorage-66318.herokuapp.com/validate",
-      "header": "Ocp-Apim-Subscription-Key:12312313213"
+      "useJwt": true,
+      "customerKey": "your-encryption-customer-key-here"
     },
     "stop": {
       "url": "https://obscure-anchorage-66318.herokuapp.com/stop",
-      "header": "Ocp-Apim-Subscription-Key:12312313213"
+      "useJwt": true,
+      "customerKey": "your-encryption-customer-key-here"
     }
   },
   "wizardSteps": [
