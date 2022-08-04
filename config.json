@@ -27,29 +27,25 @@
         }
       ],
       "url": "https://obscure-anchorage-66318.herokuapp.com/execute",
-      "header": ""
+      "headers": "{\"Authorization\":\"Bearer theToken\"}"
     }
   },
   "configurationArguments": {
     "save": {
       "url": "https://obscure-anchorage-66318.herokuapp.com/save",
-      "useJwt": true,
-      "customerKey": "your-encryption-customer-key-here"
+      "headers": "{\"Authorization\":\"Bearer theToken\"}"
     },
     "publish": {
       "url": "https://obscure-anchorage-66318.herokuapp.com/publish",
-      "useJwt": true,
-      "customerKey": "your-encryption-customer-key-here"
+      "headers": "{\"Authorization\":\"Bearer theToken\"}"
     },
     "validate": {
       "url": "https://obscure-anchorage-66318.herokuapp.com/validate",
-      "useJwt": true,
-      "customerKey": "your-encryption-customer-key-here"
+      "headers": "{\"Authorization\":\"Bearer theToken\"}"
     },
     "stop": {
       "url": "https://obscure-anchorage-66318.herokuapp.com/stop",
-      "useJwt": true,
-      "customerKey": "your-encryption-customer-key-here"
+      "headers": "{\"Authorization\":\"Bearer theToken\"}"
     }
   },
   "wizardSteps": [
