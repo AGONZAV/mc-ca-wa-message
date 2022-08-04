@@ -27,24 +27,34 @@
         }
       ],
       "url": "https://obscure-anchorage-66318.herokuapp.com/ixn/activities/hello-world/execute",
+      "body": "{email-body}",
+      "header": "",
       "useJwt": true
     }
   },
   "configurationArguments": {
     "save": {
       "url": "https://obscure-anchorage-66318.herokuapp.com/ixn/activities/hello-world/save",
+      "body": "",
+      "header": "",
       "useJwt": true
     },
     "publish": {
       "url": "https://obscure-anchorage-66318.herokuapp.com/ixn/activities/hello-world/publish",
+      "body": "",
+      "header": "",
       "useJwt": true
     },
     "validate": {
       "url": "https://obscure-anchorage-66318.herokuapp.com/ixn/activities/hello-world/validate",
+      "body": "",
+      "header": "",
       "useJwt": true
     },
     "stop": {
       "url": "https://obscure-anchorage-66318.herokuapp.com/ixn/activities/hello-world/stop",
+      "body": "",
+      "header": "",
       "useJwt": true
     }
   },
