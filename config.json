@@ -27,35 +27,25 @@
         }
       ],
       "url": "https://obscure-anchorage-66318.herokuapp.com/execute",
-      "body": "{email-body}",
-      "header": "",
-      "useJwt": true
+      "header": ""
     }
   },
   "configurationArguments": {
     "save": {
       "url": "https://obscure-anchorage-66318.herokuapp.com/save",
-      "body": "",
-      "header": "",
-      "useJwt": true
+      "header": "Ocp-Apim-Subscription-Key:12312313213"
     },
     "publish": {
       "url": "https://obscure-anchorage-66318.herokuapp.com/publish",
-      "body": "",
-      "header": "",
-      "useJwt": true
+      "header": "Ocp-Apim-Subscription-Key:12312313213"
     },
     "validate": {
       "url": "https://obscure-anchorage-66318.herokuapp.com/validate",
-      "body": "",
-      "header": "",
-      "useJwt": true
+      "header": "Ocp-Apim-Subscription-Key:12312313213"
     },
     "stop": {
       "url": "https://obscure-anchorage-66318.herokuapp.com/stop",
-      "body": "",
-      "header": "",
-      "useJwt": true
+      "header": "Ocp-Apim-Subscription-Key:12312313213"
     }
   },
   "wizardSteps": [
