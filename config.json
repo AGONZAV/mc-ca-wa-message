@@ -27,25 +27,25 @@
         }
       ],
       "url": "https://obscure-anchorage-66318.herokuapp.com/execute",
-      "headers": "{\"Authorization\":\"Bearer theToken\"}"
+      "headers": "{\"Ocp-Apim-Subscription-Key\":\"Bearer theToken\"}"
     }
   },
   "configurationArguments": {
     "save": {
       "url": "https://obscure-anchorage-66318.herokuapp.com/save",
-      "headers": "{\"Authorization\":\"Bearer theToken\"}"
+      "headers": "{\"Ocp-Apim-Subscription-Key\":\"Bearer theToken\"}"
     },
     "publish": {
       "url": "https://obscure-anchorage-66318.herokuapp.com/publish",
-      "headers": "{\"Authorization\":\"Bearer theToken\"}"
+      "headers": "{\"Ocp-Apim-Subscription-Key\":\"Bearer theToken\"}"
     },
     "validate": {
       "url": "https://obscure-anchorage-66318.herokuapp.com/validate",
-      "headers": "{\"Authorization\":\"Bearer theToken\"}"
+      "headers": "{\"Ocp-Apim-Subscription-Key\":\"Bearer theToken\"}"
     },
     "stop": {
       "url": "https://obscure-anchorage-66318.herokuapp.com/stop",
-      "headers": "{\"Authorization\":\"Bearer theToken\"}"
+      "headers": "{\"Ocp-Apim-Subscription-Key\":\"Bearer theToken\"}"
     }
   },
   "wizardSteps": [
