@@ -215,6 +215,7 @@ define(["postmonger"], function (Postmonger) {
         emailAddress: "{{InteractionDefaults.Email}}",
         name: "{{Contact.Attribute." + eventDefinitionKey + '."nombre"}}',
         phoneNumber: '{{Contact.Attribute."testia"."PhoneNumber"}}',
+        Nom: "{{Event." + eventDefinitionKey + ". nombre}}",
       },
     ];
 
