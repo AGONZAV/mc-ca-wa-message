@@ -37,6 +37,12 @@ define(["postmonger"], function (Postmonger) {
     }
   );
 
+  connection.trigger("requestSchema");
+  connection.on("requestedSchema", function (data) {
+    // save schema
+    console.log("*** Schema ***", JSON.stringify(data["schema"]));
+  });
+
   function onRender() {
     // JB will respond the first time 'ready' is called with 'initActivity'
     connection.trigger("ready");
@@ -207,7 +213,7 @@ define(["postmonger"], function (Postmonger) {
       {
         message: value,
         emailAddress: "{{InteractionDefaults.Email}}",
-        name: '{{Contact.Attribute."testia"."nombre"}}',
+        name: "{{Contact.Attribute." + eventDefinitionKey + ".nombre}}",
         phoneNumber: '{{Contact.Attribute."testia"."PhoneNumber"}}',
       },
     ];
