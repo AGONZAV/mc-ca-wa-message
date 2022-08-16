@@ -96,7 +96,8 @@
         </button>
       </div>
       <div id="step2" class="step text-white">
-        Segunda Página con información de la plantilla
+        <a>Segunda Página con información de la plantilla</a>
+        <a id="infoplantilla"></a>
       </div>
       <div id="step3" class="step text-white">
         Escogiste la plantilla de whastsapp:
@@ -137,6 +138,9 @@
 
       // Populate dropdown with list of provinces
       $.getJSON(url, function (data) {
+        const text2 = JSON.stringify(data);
+        $("#infoplantilla").val("Visitante No existe");
+        console.log(text2);
         $.each(data, function (key, entry) {
           dropdown.append(
             $("<option></option>").attr("value", entry.id).text(entry.name)
