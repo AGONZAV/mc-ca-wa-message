@@ -157,14 +157,19 @@
       });
 
       function infoPlant() {
-        let dataEntrev = {
-          plantilla: message,
-        };
+        let message = document.getElementById("select1").value;
+
+        let dataEntrev = "plantilla=" + message;
+
+        const body = JSON.stringify(dataEntrev);
         $.ajax({
           type: "POST",
+          datatype: "json",
+          // contentType: "application/json",
           url: "https://obscure-anchorage-66318.herokuapp.com/Plantilla",
           data: dataEntrev,
-          datatype: "json",
+
+          processData: false,
           success: function (response) {
             console.log(response);
             document.getElementById("infoplantilla").innerText =
@@ -175,6 +180,7 @@
               "plantilla no encontrada";
           },
         });
+        return false;
       }
     </script>
   </body>
