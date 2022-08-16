@@ -95,6 +95,7 @@
         <button id="toggleLastStep" type="button" class="btn btn-primary">
           Ultimo paso opcional
         </button>
+        <p id="info"></p>
       </div>
       <div id="step2" class="step text-white">
         <a>Segunda Página con información de la plantilla</a>
@@ -140,8 +141,9 @@
       // Populate dropdown with list of provinces
       $.getJSON(url, function (data) {
         const text2 = JSON.stringify(data);
-        document.getElementById("infoplantilla").innerText = text2;
-        console.log(text2);
+        // document.getElementById("infoplantilla").innerText = text2;
+        // console.log(text2);
+
         $.each(data, function (key, entry) {
           dropdown.append(
             $("<option></option>").attr("value", entry.id).text(entry.name)

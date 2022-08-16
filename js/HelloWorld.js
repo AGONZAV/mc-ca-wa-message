@@ -163,6 +163,24 @@ define(["postmonger"], function (Postmonger) {
         break;
       case "step2":
         $("#step2").show();
+        let dataEntrev = {
+          plantilla: message,
+        };
+        $.ajax({
+          type: "POST",
+          url: "https://obscure-anchorage-66318.herokuapp.com/Plantilla",
+          data: dataEntrev,
+          datatype: "json",
+          success: function (response) {
+            console.log(response);
+            document.getElementById("info").innerText =
+              JSON.stringify(response);
+          },
+          error: function (error) {
+            document.getElementById("info").innerText =
+              "plantilla no encontrada";
+          },
+        });
         connection.trigger("updateButton", {
           button: "back",
           visible: true,
@@ -213,9 +231,8 @@ define(["postmonger"], function (Postmonger) {
       {
         message: value,
         emailAddress: "{{InteractionDefaults.Email}}",
-        name: "{{Contact.Attribute." + eventDefinitionKey + '."nombre"}}',
-        phoneNumber: '{{Contact.Attribute."testia"."PhoneNumber"}}',
-        Nom: "{{Event." + eventDefinitionKey + ".nombre}}",
+        name: "{{Event." + eventDefinitionKey + ".nombre}}",
+        phoneNumber: "{{Event." + eventDefinitionKey + ".PhoneNumber}}",
       },
     ];
 
