@@ -83,6 +83,7 @@
       <div id="step1" class="step text-white">
         Seleccione su plantilla de whastsapp:
         <select id="select1" name="locality" class="form-select"></select>
+
         <!-- <select class="form-select" id="select1">
           <option value="">Opciones</option>
           <option value="Plantilla1">Plantilla 1</option>
@@ -97,7 +98,7 @@
       </div>
       <div id="step2" class="step text-white">
         <a>Segunda Página con información de la plantilla</a>
-        <a id="infoplantilla"></a>
+        <p id="infoplantilla"></p>
       </div>
       <div id="step3" class="step text-white">
         Escogiste la plantilla de whastsapp:
@@ -139,7 +140,7 @@
       // Populate dropdown with list of provinces
       $.getJSON(url, function (data) {
         const text2 = JSON.stringify(data);
-        $("#infoplantilla").val("Visitante No existe");
+        document.getElementById("infoplantilla").innerText = text2;
         console.log(text2);
         $.each(data, function (key, entry) {
           dropdown.append(
