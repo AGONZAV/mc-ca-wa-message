@@ -23,6 +23,20 @@ define(["postmonger"], function (Postmonger) {
   connection.on("clickedBack", onClickedBack);
   connection.on("gotoStep", onGotoStep);
 
+  var eventDefinitionKey;
+  connection.trigger("requestTriggerEventDefinition");
+  connection.on(
+    "requestedTriggerEventDefinition",
+    function (eventDefinitionModel) {
+      if (eventDefinitionModel) {
+        eventDefinitionKey = eventDefinitionModel.eventDefinitionKey;
+        console.log(">>>Event Definition Key " + eventDefinitionKey);
+        /*If you want to see all*/
+        console.log(">>>Request Trigger", JSON.stringify(eventDefinitionModel));
+      }
+    }
+  );
+
   function onRender() {
     // JB will respond the first time 'ready' is called with 'initActivity'
     connection.trigger("ready");
