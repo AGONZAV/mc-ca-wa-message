@@ -40,7 +40,7 @@ define(["postmonger"], function (Postmonger) {
   connection.trigger("requestSchema");
   connection.on("requestedSchema", function (data) {
     // save schema
-    console.log("*** Schema ***", JSON.stringify(data["schema"]));
+    console.log("*** Schema ***", data["schema"]);
   });
 
   function onRender() {
@@ -213,7 +213,7 @@ define(["postmonger"], function (Postmonger) {
       {
         message: value,
         emailAddress: "{{InteractionDefaults.Email}}",
-        name: "{{Contact.Attribute." + eventDefinitionKey + ".nombre}}",
+        name: "{{Contact.Attribute." + eventDefinitionKey + '."nombre"}}',
         phoneNumber: '{{Contact.Attribute."testia"."PhoneNumber"}}',
       },
     ];
