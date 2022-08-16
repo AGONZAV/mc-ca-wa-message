@@ -82,7 +82,12 @@
       </nav>
       <div id="step1" class="step text-white">
         Seleccione su plantilla de whastsapp:
-        <select id="select1" name="locality" class="form-select"></select>
+        <select
+          id="select1"
+          name="locality"
+          class="form-select"
+          onchange="infoPlant()"
+        ></select>
 
         <!-- <select class="form-select" id="select1">
           <option value="">Opciones</option>
@@ -150,6 +155,27 @@
           );
         });
       });
+
+      function infoPlant() {
+        let dataEntrev = {
+          plantilla: message,
+        };
+        $.ajax({
+          type: "POST",
+          url: "https://obscure-anchorage-66318.herokuapp.com/Plantilla",
+          data: dataEntrev,
+          datatype: "json",
+          success: function (response) {
+            console.log(response);
+            document.getElementById("infoplantilla").innerText =
+              JSON.stringify(response);
+          },
+          error: function (error) {
+            document.getElementById("infoplantilla").innerText =
+              "plantilla no encontrada";
+          },
+        });
+      }
     </script>
   </body>
 </html>
