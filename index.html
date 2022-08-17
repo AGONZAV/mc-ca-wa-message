@@ -88,23 +88,34 @@
           class="form-select"
           onchange="infoPlant()"
         ></select>
-
-        <!-- <select class="form-select" id="select1">
-          <option value="">Opciones</option>
-          <option value="Plantilla1">Plantilla 1</option>
-          <option value="Plantilla2">Plantilla 2</option>
-          <option value="contactabilidad">contactabilidad</option>
-          <option value="Plantilla3">Plantilla 3</option>
-        </select> -->
-
         <button id="toggleLastStep" type="button" class="btn btn-primary">
           Ultimo paso opcional
         </button>
-        <p id="info"></p>
       </div>
       <div id="step2" class="step text-white">
         <a>Segunda Página con información de la plantilla</a>
-        <p id="infoplantilla"></p>
+        <div id="divplant">
+          <p id="info"></p>
+          <div class="row">
+            <div class="col-md-2 font-weight-bold">Descripcion:</div>
+            <div class="colcol-md-10">
+              <p id="Descripcion"></p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-2 font-weight-bold">
+              Parametros de la plantilla:
+            </div>
+            <div class="colcol-md-10">
+              <table id="tbParam" class="default">
+                <th>Parametros</th>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div id="onError">
+          <p id="info2"></p>
+        </div>
       </div>
       <div id="step3" class="step text-white">
         Escogiste la plantilla de whastsapp:
@@ -135,7 +146,7 @@
 
     <script>
       let dropdown = $("#select1");
-
+      $("#divplant").fadeOut(10);
       dropdown.empty();
 
       dropdown.append('<option selected="true" disabled>Opciones</option>');
@@ -172,11 +183,26 @@
           processData: false,
           success: function (response) {
             console.log(response);
-            document.getElementById("infoplantilla").innerText =
-              JSON.stringify(response);
+            $("#onError").fadeOut(10);
+            $("#divplant").fadeIn(10);
+            // document.getElementById("info").innerText =
+            //   JSON.stringify(response);
+            document.getElementById("Descripcion").innerText = JSON.stringify(
+              response.descripcion
+            );
+            let tabla = $("#tbParam");
+            tabla.children().remove();
+            $.each(response.parametros, function (key, val) {
+              if (key > 0) {
+                console.log(key + "" + val.text);
+                tabla.append($("<tr></tr>").text(val.text));
+              }
+            });
           },
           error: function (error) {
-            document.getElementById("infoplantilla").innerText =
+            $("#divplant").fadeOut(10);
+            $("#onError").fadeIn(10);
+            document.getElementById("info2").innerText =
               "plantilla no encontrada";
           },
         });
