@@ -41,9 +41,16 @@ define(["postmonger"], function (Postmonger) {
   connection.on("requestedSchema", function (data) {
     // save schema
     console.log("*** Schema ***", data["schema"]);
+    let objson = [];
     for (let index of data["schema"]) {
       console.log(index.name);
+      let key = index.name;
+      let value = index.key;
+      let member = { key, value };
+      objson.push(member);
+      console.log(objson);
     }
+    console.log(objson);
   });
 
   function onRender() {
