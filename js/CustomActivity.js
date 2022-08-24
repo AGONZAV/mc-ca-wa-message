@@ -43,10 +43,10 @@ define(["postmonger"], function (Postmonger) {
     console.log("*** Schema ***", data["schema"]);
     let objson = [];
     for (let index of data["schema"]) {
-      console.log(index.name);
       let key = index.name;
       let value = index.key;
-      let member = { key, value };
+      let member = key + ":" + value;
+      console.log(member);
       objson.push(member);
       console.log(objson);
     }
