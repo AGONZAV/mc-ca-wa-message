@@ -7,7 +7,7 @@
   "type": "REST",
   "lang": {
     "en-US": {
-      "name": "WhatsApp Protección",
+      "name": "WhatsApp I.A. Protección",
       "description": "REST Custom activity using workflow API v1.1 format for Whatsapp message"
     }
   },
