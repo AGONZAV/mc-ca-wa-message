@@ -1,6 +1,6 @@
 define(["postmonger"], function (Postmonger) {
   "use strict";
-
+  let objson = {};
   var connection = new Postmonger.Session();
   var payload = {};
   var lastStepEnabled = false;
@@ -41,7 +41,7 @@ define(["postmonger"], function (Postmonger) {
   connection.on("requestedSchema", function (data) {
     // save schema
     console.log("*** Schema ***", data["schema"]);
-    let objson = {};
+
     for (let index of data["schema"]) {
       let valor = "{{" + index.key + "}}";
       objson[index.name] = valor;
