@@ -41,14 +41,10 @@ define(["postmonger"], function (Postmonger) {
   connection.on("requestedSchema", function (data) {
     // save schema
     console.log("*** Schema ***", data["schema"]);
-    let objson = [];
+    let objson = {};
     for (let index of data["schema"]) {
-      let llave = '"' + index.name + '"';
-      let valor = '"' + index.key + '"';
-      let member = "{" + llave + ":" + valor + "}";
-      console.log(member);
-      objson.push(JSON.parse(member));
-      console.log(objson);
+      let valor = "{{" + index.key + "}}";
+      objson[index.name] = valor;
     }
     console.log(objson);
   });
@@ -218,15 +214,17 @@ define(["postmonger"], function (Postmonger) {
     // set by this activity's config.json file.  Any property
     // may be overridden as desired.
     payload.name = name;
-
-    payload["arguments"].execute.inArguments = [
-      {
-        message: value,
-        emailAddress: "{{InteractionDefaults.Email}}",
-        name: "{{Event." + eventDefinitionKey + ".nombre}}",
-        phoneNumber: "{{Event." + eventDefinitionKey + ".PhoneNumber}}",
-      },
-    ];
+    let payloadprev = { message: value };
+    let newpayload = Object.assign(payloadprev, objson);
+    payload["arguments"].execute.inArguments = [newpayload];
+    // payload["arguments"].execute.inArguments = [
+    //   {
+    //     message: value,
+    //     emailAddress: "{{InteractionDefaults.Email}}",
+    //     name: "{{Event." + eventDefinitionKey + ".nombre}}",
+    //     phoneNumber: "{{Event." + eventDefinitionKey + ".PhoneNumber}}",
+    //   },
+    // ];
 
     payload["metaData"].isConfigured = true;
 
