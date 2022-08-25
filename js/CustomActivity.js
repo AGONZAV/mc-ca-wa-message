@@ -114,6 +114,7 @@ define(["postmonger"], function (Postmonger) {
       $("#message").html(message);
       showStep(null, 3);
     }
+    $("#idps1").html(JSON.stringify(objson));
   }
 
   function onGetTokens(tokens) {

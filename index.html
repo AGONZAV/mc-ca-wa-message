@@ -81,16 +81,25 @@
         </div>
       </nav>
       <div id="step1" class="step text-white">
-        Seleccione su plantilla de whastsapp:
-        <select
-          id="select1"
-          name="locality"
-          class="form-select"
-          onchange="infoPlant()"
-        ></select>
-        <button id="toggleLastStep" type="button" class="btn btn-primary">
-          Ultimo paso opcional
-        </button>
+        <div class="row">
+          <div class="col">
+            Seleccione su plantilla de whastsapp:
+            <select
+              id="select1"
+              name="locality"
+              class="form-select"
+              onchange="infoPlant()"
+            ></select>
+            <button id="toggleLastStep" type="button" class="btn btn-primary">
+              Ultimo paso opcional
+            </button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <p id="idps1">asdf</p>
+          </div>
+        </div>
       </div>
       <div id="step2" class="step text-white">
         <a>Segunda Página con información de la plantilla</a>
@@ -194,7 +203,7 @@
             tabla.children().remove();
             $.each(response.parametros, function (key, val) {
               if (key > 0) {
-                console.log(key + "" + val.text);
+                console.log(key + " " + val.text);
                 tabla.append($("<tr></tr>").text(val.text));
               }
             });
