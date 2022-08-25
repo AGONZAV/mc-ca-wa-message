@@ -1,7 +1,7 @@
 define(["postmonger"], function (Postmonger) {
   "use strict";
   let objson = {};
-  let tabla = $("#idps1");
+  let tablastp1 = $("#idps1");
   var connection = new Postmonger.Session();
   var payload = {};
   var lastStepEnabled = false;
@@ -46,7 +46,7 @@ define(["postmonger"], function (Postmonger) {
     for (let index of data["schema"]) {
       let valor = "{{" + index.key + "}}";
       objson[index.name] = valor;
-      tabla.append($("<tr></tr>").text(index.name));
+      tablastp1.append($("<tr></tr>").text(index.name));
     }
     console.log(objson);
   });
